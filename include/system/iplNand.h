@@ -140,6 +140,7 @@ namespace ipl {
 
         class LangFile : public Base {
         public:
+            LangFile() : Base() { mpCommonFile = NULL; mpLangFile = NULL; }
             LangFile(EGG::Heap* heap, const char* dirName, const char* fileName, ARCHandle* arc, bool bIsNandFile);
             virtual ~LangFile();  // 0x08
 
@@ -152,13 +153,15 @@ namespace ipl {
             File* getCmnFile() const { return mpCommonFile; }
             File* getLangFile() const { return mpLangFile; }
 
-        private:
+        protected:
             File* mpCommonFile;  // 0x04
             File* mpLangFile;    // 0x08
         };
 
         class LayoutFile : public LangFile {
         public:
+            LayoutFile() : LangFile() {}
+            LayoutFile(File* commonFile) : LangFile() { mpCommonFile = commonFile; mpLangFile = NULL; }
             LayoutFile(EGG::Heap* heap, const char* dirName, const char* fileName, ARCHandle* arc, bool bIsNandFile);
             virtual ~LayoutFile();  // 0x08
         };

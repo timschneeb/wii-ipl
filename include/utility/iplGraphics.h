@@ -44,6 +44,12 @@ namespace ipl {
             static void drawPolygon(const nw4r::ut::Rect& rect, GXColor color);
             static void drawTexture(const nw4r::ut::Rect& rect, const GXTexObj& texObj, GXColor color, u8 texScale, Orientation ori = ORI_NONE);
 
+            static void setOrthoTrans(const math::VEC3& translate) {
+                mArg.mOrthoTrans = translate;
+            }
+            static void setOrthoScale(const math::VEC2& scale) {
+                mArg.mOrthoScale = scale;
+            }
             static void setOrthoTransAndScale(const math::VEC3& translate, const math::VEC2& scale) {
                 mArg.mOrthoTrans = translate;
                 mArg.mOrthoScale = scale;

@@ -1224,7 +1224,7 @@ namespace ipl {
 
         BOOL Manager::fn_8133A634(ESTitleId titleId) {
             SEntry* channel = fn_8133A4E0(titleId);
-            if (channel != NULL && (channel->metaHdr->blockHdr.unk_14 << 14)) {
+            if (channel != NULL && (channel->metaHdr->blockHdr.useAltSound << 14)) {
                 return TRUE;
             } else {
                 return FALSE;

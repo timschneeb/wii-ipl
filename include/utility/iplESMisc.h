@@ -56,6 +56,8 @@ namespace ipl {
 
             static BOOL __IsPCEnable();
 
+            static BOOL CheckTmdParentalControl(ESTmdView* tmdView);
+
             static BOOL ChangeUid(ESTitleId titleId);
 
             static u32 NumInodesSaveDirRoot(ESTitleId titleId);

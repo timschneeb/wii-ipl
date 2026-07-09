@@ -37,7 +37,7 @@ namespace nw4r {
         }  // namespace detail
 
         template <typename TDerived, typename TBase>
-        inline TDerived DynamicCast(TBase* pPtr) {
+        TDerived DynamicCast(TBase* pPtr) {
             const detail::RuntimeTypeInfo* pDerivedTypeInfo = detail::GetTypeInfoFromPtr_(static_cast<TDerived>(NULL));
             if (pPtr->GetRuntimeTypeInfo()->IsDerivedFrom(pDerivedTypeInfo)) {
                 return static_cast<TDerived>(pPtr);

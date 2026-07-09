@@ -47,13 +47,7 @@ namespace ipl {
         template <typename T>
         class HermiteIntp : public Interporation<T> {
         public:
-            void init(const T& start, const T& end, f32 maxFrame, f32 param_5, f32 param_6, int playback, f32 speed = 1.0f) {
-                mStart = start;
-                mEnd = end;
-                utility::FrameController::init(playback, maxFrame, 0.0f, speed);
-                unkVal0 = param_5;
-                unkVal1 = param_6;
-            }
+            void init(const T& start, const T& end, f32 maxFrame, f32 param_5, f32 param_6, int playback, f32 speed = 1.0f);
 
             T get() const {
                 f32 var_f27 = mFrame;
@@ -92,6 +86,15 @@ namespace ipl {
             f32 unkVal0;
             f32 unkVal1;
         };
+
+        template <typename T>
+        void HermiteIntp<T>::init(const T& start, const T& end, f32 maxFrame, f32 param_5, f32 param_6, int playback, f32 speed) {
+            mStart = start;
+            mEnd = end;
+            utility::FrameController::init(playback, maxFrame, 0.0f, speed);
+            unkVal0 = param_5;
+            unkVal1 = param_6;
+        }
     }  // namespace math
 }  // namespace ipl
 

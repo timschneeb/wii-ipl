@@ -77,6 +77,8 @@ namespace ipl {
             int getIPLState() { return mIPLState; }
             BS2State getUnlockedState() { return mUnlockedState; }
             BOOL diskHasBanner() { return mbHasBanner; }
+            u32 getEntrySize() const { return mEntrySize; }
+            u32 getEntryOffset() const { return mEntryOffset; }
 
         private:
             void bootNewSystem();

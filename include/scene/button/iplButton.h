@@ -390,6 +390,7 @@ namespace ipl {
             friend class ButtonEventHandlerBase;
             friend class OptOutButtonEventHandlerBase;
             friend class SDMenuEventHandlerBase;
+            friend class CsChanTtlButtonEventHandler;
         };
 
         /* Button event handlers */

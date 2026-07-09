@@ -23,8 +23,10 @@ namespace ipl {
             virtual void fn_815F6278();  // 0x08
             virtual void calc();         // 0x0C
 
+            void startBannerSound(void* data, u32 size, bool isChannel);
             void stopAllSound(int unk = 0);
             void stopBannerSound(int unk = 0);
+            void stopSE(void* handle, int unk);
 
             int startSE(const char* sndName);
             int holdSE(const char* sndName);

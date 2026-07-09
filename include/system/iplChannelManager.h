@@ -116,7 +116,7 @@ namespace ipl {
                     u32 iconCSIdx : 4;     // 0x01:00000000111100000000000000000000
                     u32 bannerCSIdx : 4;   // 0x01:00000000000011110000000000000000
                     u32 unk_15 : 1;        // 0x02:00000000000000001000000000000000
-                    u32 unk_14 : 1;        // 0x02:00000000000000000100000000000000
+                    u32 useAltSound : 1;   // 0x02:00000000000000000100000000000000
                     u32 unk_13 : 1;        // 0x02:00000000000000000010000000000000
                     u32 unk_12 : 1;        // 0x02:00000000000000000001000000000000
                     u32 unk_11 : 1;        // 0x02:00000000000000000000100000000000
@@ -280,6 +280,15 @@ namespace ipl {
             bool isNormalChannel(int page, int index) const {
                 return mChannels[page][index].loadedBnr && mChannels[page][index].info.sceneID != SCENE_ID_DISK_CHANNEL;
             }
+            u32 getSoundSize(int page, int index) const {
+                return mChannels[page][index].loadedBnr != 0 ? mChannels[page][index].metaHdr->blockHdr.soundSize : 0;
+            }
+            BOOL checkUseAltSound(int page, int index) const {
+                if (mChannels[page][index].loadedBnr != 0 && mChannels[page][index].metaHdr->blockHdr.flags & 0x4000) {
+                    return TRUE;
+                }
+                return FALSE;
+            }
 
             int updateInitState();
             int updateWaitSCFlush();
@@ -327,6 +336,7 @@ namespace ipl {
 
             int getChJumpChanPage() { return mChJumpPage; }
             int getChJumpChanIndex() { return mChJumpIndex; }
+            void setLoadedChJump(bool val) { mbLoadedChJump = val; }
 
             void setUnk_0x1B81(bool flag) { unk_0x1B81 = flag; }
             bool isUnk_0x1B81() { return unk_0x1B81; }
