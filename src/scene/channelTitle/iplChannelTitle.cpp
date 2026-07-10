@@ -63,18 +63,6 @@ typedef struct {
 #pragma pack(pop)
 
 // .sdata strings referenced by pointer arrays
-extern char lbl_81696A54[];
-extern char lbl_81696A5A[];
-extern char lbl_81696A60[];
-extern char lbl_81696A66[];
-extern char lbl_81696A6C[];
-extern char lbl_81696A72[];
-extern char lbl_81696A78[];
-extern char lbl_81696A7E[];
-extern char lbl_81696A84[];
-extern char lbl_81696A8A[];
-extern char lbl_81696A90[];
-extern char lbl_81696A96[];
 extern char lbl_8164EAD4[];
 extern EAE6Block lbl_8164EAE6;
 extern volatile const f32 lbl_816949F4 = 28.0f;
@@ -125,14 +113,6 @@ const char* lbl_81696A40 = lbl_8164EAD4;
 char lbl_81696A44[8] = "G_Back";
 const char* lbl_81696A4C = lbl_81696A44;
 const char* lbl_81696A50 = (const char*)&lbl_8164EAE6;
-extern char lbl_81696A9C[];
-extern char lbl_81696AA3[];
-const char* lbl_8164EB0C[14] = { "Fre_a", "Fre_d", "Fre_i", "Fre_l", "Fre_e", "Fre_f", "Fre_g", "Fre_h", "Fre_b", "Fre_c", "Fre_j", "Fre_k", lbl_81696A9C, lbl_81696AA3 };
-char lbl_81696A9C[] = "T_BtnA";
-char lbl_81696AA3[] = "T_BtnB";
-const char* ptr_T_BtnA = lbl_81696A9C;
-const char* ptr_T_BtnB = lbl_81696AA3;
-const char* const ptr_pad_zero = (const char*)0;
 
 const char* lbl_8164EAAC[10] = {
     "my_DiskCh_a_Start.brlan", "my_DiskCh_a_DiskStart.brlan",
@@ -142,13 +122,16 @@ const char* lbl_8164EAAC[10] = {
     "my_DiskCh_a_UnknownLoop.brlan", "my_DiskCh_a_UnknwnEject.brlan"
 };
 
+
 char lbl_8164EAD4[] = "my_DiskCh_a.brlyt";
 EAE6Block lbl_8164EAE6 = {
     "my_GCTop_a_BackLoop.brlan",
-    { lbl_81696A54, lbl_81696A5A, lbl_81696A60, lbl_81696A66,
-      lbl_81696A6C, lbl_81696A72, lbl_81696A78, lbl_81696A7E,
-      lbl_81696A84, lbl_81696A8A, lbl_81696A90, lbl_81696A96 }
+    { "Fre_a", "Fre_d", "Fre_i", "Fre_l", "Fre_e", "Fre_f",
+        "Fre_g", "Fre_h", "Fre_b", "Fre_c", "Fre_j", "Fre_k" }
 };
+
+char lbl_81696A9C[] = "T_BtnA";
+char lbl_81696AA3[] = "T_BtnB";
 
 namespace ipl {
     namespace scene {
