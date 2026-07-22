@@ -126,7 +126,7 @@ typedef struct ChunkEntry {
 } ChunkEntry;
 
 typedef struct CHANSVmPrivate {
-    vmU8 unk_0x00[8];                      // 0x00
+    vmInteger exitCode;                    // 0x00
     vmU32 exeStart;                        // 0x08
     vmU32 exeSize;                         // 0x0C
     vmS32 depth;                           // 0x10

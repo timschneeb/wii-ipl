@@ -49,6 +49,9 @@ CHANSVmErr CHANSVmSetInteger(CHANSVm* vm, CHANSVmObjHdr* object, vmInteger val);
 CHANSVmErr CHANSVmSetFloat(CHANSVm* vm, CHANSVmObjHdr* object, vmFloat value);
 CHANSVmErr CHANSVmSetU16String(CHANSVm* vm, CHANSVmObjHdr* object, vmWString str, vmSize strLen);
 
+CHANSVmObjHdr* CHANSVmNewStringObject(CHANSVm* vm, CHANSVmObjHdr* object, vmU32 length);
+CHANSVmErr CHANSVmSetU16StringFromU8(CHANSVm* vm, CHANSVmObjHdr* object, vmString str, vmSize strLen);
+
 vmU32 CHANSVmStrCpyToU8FromStringObject(u8* output, CHANSVmObjHdr* stringObj, vmSize length);
 
 vmU32 CHANSVmGetArgc(CHANSVm* vm);
@@ -60,6 +63,9 @@ CHANSVmObjHdr* CHANSVmGetArgString(CHANSVm* vm, vmU32 argIdx);
 CHANSVmObjHdr* CHANSVmNewArrayObject(CHANSVm* vm, CHANSVmObjHdr* object, vmU32 dimensions, vmSize* sizeEachDimension);
 CHANSVmObjHdr* CHANSVmGetArrayElement2D(CHANSVm* vm, vmPtr array, vmS32 dimension0, vmS32 dimension1);
 CHANSVmObjHdr* CHANSVmGetArrayElement2DFloat(CHANSVm* vm, vmFloat* array, vmS32 dimension0, vmS32 dimension1);
+
+CHANSVmObjHdr* CHANSVmNewBlobObject(CHANSVm*, CHANSVmObjHdr*, vmU32 size, vmPtr src, vmU32 count);
+CHANSVmObjHdr* CHANSVmNewImageObject(CHANSVm*, CHANSVmObjHdr*, vmPtr srcData, vmU16 width, vmU16 height, vmS32 format);
 
 /************************/
 /***   CHANS Method   ***/

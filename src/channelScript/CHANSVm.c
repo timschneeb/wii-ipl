@@ -428,8 +428,8 @@ error:
     return vmNull;
 }
 
-void CHANSVmNewStringObject(CHANSVm* vm, CHANSVmObjHdr* obj, vmSize len) {
-    CHANSVmNewObject(vm, vmFalse, obj, CHANS_VM_OBJ_TYPE_STRING, len);
+CHANSVmObjHdr* CHANSVmNewStringObject(CHANSVm* vm, CHANSVmObjHdr* obj, vmSize len) {
+    return CHANSVmNewObject(vm, vmFalse, obj, CHANS_VM_OBJ_TYPE_STRING, len);
 }
 
 CHANSVmObjHdr* CHANSVmCopyObject(CHANSVm* vm, CHANSVmObjHdr* outObj, CHANSVmObjHdr* inObj) {

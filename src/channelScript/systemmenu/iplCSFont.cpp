@@ -7,7 +7,7 @@ namespace ipl {
         namespace font {
             BOOL _ctor(CHANSVm* vm, CHANSVmObjHdr* obj, u32 font) {
                 BOOL result = FALSE;
-                u32* data = (u32*)CHANSVmNewObjData(vm, obj, sizeof(*data));
+                u32* data = static_cast<u32*>(CHANSVmNewObjData(vm, obj, sizeof(*data)));
                 if (data != NULL) {
                     *data = font;
                     obj->type = CHANS_VM_TYPE_OBJECT;
